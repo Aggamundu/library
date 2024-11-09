@@ -61,6 +61,7 @@ button:hover{
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,360px));
     gap:20px;
+    margin-left: 200px;
 }
 .card{
     display:flex;
