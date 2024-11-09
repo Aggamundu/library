@@ -57,7 +57,7 @@ button:hover{
     cursor: pointer;
 }
 .books{
-    width:80vw;
+    width:95vw;
     display:grid;
     grid-template-columns: repeat(auto-fit,minmax(300px,360px));
     gap:20px;
