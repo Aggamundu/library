@@ -1,4 +1,4 @@
-function Book(author, title, pages, read, index){
+function Book(author, title, pages, read){
     this.author = author;
     this.title = title;
     this.pages = pages;
@@ -8,12 +8,12 @@ function Book(author, title, pages, read, index){
 const myLibrary = [];
 
 function addBookToLibrary(author, title, pages,read){
-    let newBook = new Book(author,title,pages,read,myLibrary.length);
+    let newBook = new Book(author,title,pages,read);
     myLibrary.push(newBook);
 }
 const bookGridDiv = document.querySelector(".books")
 function displayBooks(){
-    myLibrary.forEach((book)=>{
+    myLibrary.forEach((book,index)=>{
         let card = document.createElement("div");
         card.innerHTML = `
         <h2>"${book.title}"</h2>
@@ -39,10 +39,11 @@ function displayBooks(){
                 readButton.style.backgroundColor = "#FF474C";
             }
         });
+        card.dataset.index = index;
         let removeButton = card.querySelector(".remove");
         removeButton.addEventListener('click',()=>{
-            let index = Array.from(bookGridDiv).indexOf(card);
-            myLibrary.splice(index,1);
+            const indexToRemove = parseInt(card.dataset.index,10);
+            myLibrary.splice(indexToRemove,1);
             bookGridDiv.innerHTML = "";
             displayBooks();
         });
@@ -71,5 +72,11 @@ submit.addEventListener('click',()=>{
     }
     addBookToLibrary(author,title,number,isRead);
     bookGridDiv.innerHTML = "";
-    displayBooks()
+    displayBooks();
 });
+
+addBookToLibrary("Kurt Vonnegut","Slaughterhouse-five",288,true);
+addBookToLibrary("Frank Herbert","Dune",412,false);
+addBookToLibrary("Kurt Vonnegut","The Sirens of Titan",200,true);
+displayBooks();
+

@@ -101,3 +101,28 @@ button:hover{
     border-radius: 5px;
     margin-bottom: 8px;
 }
+
+.modal{
+    width: 300px;
+    height:400px;
+    border: none;
+    background-color:aliceblue;
+}
+.modal::backdrop{
+    background-color: rgba(0 0 0 /0.3);
+}
+#myForm{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    align-items: center;
+}
+.form-input{
+    height:50px;
+    width:266px;
+}
+#submit-button{
+    height:50px;
+    width: 150px;
+    font-size: 18px;
+}
