@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src = "script.js" defer></script>
+</head>
+<body>
+    <div class = "header">
+        library <img class = "header-icon"src="images/book-svgrepo-com.svg" alt="">
+    </div>
+    <div class="contents">
+        <button class = "add-book">+ Add book</button>
+        <div class="books"> </div>
+    </div>
+
+    <dialog class = "modal" id = "modal">
+        <form id = "myForm" action="" method = "dialog">
+            <input id = "title" type="text" placeholder="Title" required>
+            <input id = "author" type="text" placeholder="Author" required>
+            <input id = "number" type="number" placeholder="# of pages" required>
+            <label for="">
+                Have you read it?
+                <input id = "checkbox" type="checkbox" required>
+            </label>
+            <button id = "submit-button">Submit</button>
+        </form>
+    </dialog>
+    <div class="footer">
+        by ryan cepeda
+    </div>
+    
+</body>
+</html>
